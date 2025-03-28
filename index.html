@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yustisio's Competitions Achievement</title>
+    <style>
+        @media (max-width: 750px) {
+        .container {
+            flex-direction: column;
+            margin: 0 10px;
+            padding: 10px;
+            align-items: center; /* Pastikan menu dan deskripsi sejajar tengah */
+            gap: 10px; /* Mengurangi jarak antar elemen */
+        }
+
+        .menu {
+            width: 90%; /* Pastikan lebar menu sama dengan deskripsi */
+            max-height: none;
+            margin-bottom: 10px; /* Mengurangi jarak dengan deskripsi */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .description {
+            width: 90%; /* Pastikan lebar deskripsi sama dengan menu */
+            max-width: 800px; /* Maksimal lebar */
+            height: auto;
+            padding: 15px; /* Mengurangi padding agar lebih kompak */
+            font-size: 16px;
+            overflow-y: auto;
+            text-align: justify;
+            margin-left: 0; /* Hapus margin kiri agar sejajar dengan menu */
+        }
+
+        .description-content {
+            font-size: 14px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        figure img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .menu-item {
+            font-size: 13px;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .description {
+            font-size: 20px; /* Ukuran teks lebih besar untuk laptop */
+        }
+
+        .menu-item {
+            font-size: 15px;
+        }
+
+    }
+        
+        body {
+            font-family: "Times New Roman", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #787276;
+            color: white;
+        }
+        
+        .header {
+            background-color: #3E424B;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin: 0 40px;
+            align-items: flex-start;
+            gap: 20px; /* Tambahkan jarak antara menu dan deskripsi */
+        }
+        
+        .menu {
+            width: 200px;
+            background-color: #3E424B;
+            padding: 10px;
+            border-radius: 8px;
+            max-height: 750px;
+            margin-right: 20px; /* Tambahkan jarak dari deskripsi */
+        }
+        
+        .menu-item {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #222021;
+            background-color: #808588;
+            cursor: pointer;
+            text-align: left;
+            color:#ffffff;
+        }
+        
+        .menu-item:hover {
+            background-color: #0F1A2B;
+        }
+        
+        .description {
+            position: relative;
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #787276;
+            height: calc(90vh - 80px);
+            border-radius: 8px;
+            text-align: justify;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            max-height: 800px;
+            margin-left: 20px;
+            overflow: hidden;
+        }
+        
+        /* Overlay transparan 70% */
+        .description::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* 70% gelap */
+            border-radius: 8px;
+            z-index: 1;
+        }
+        
+        /* Pastikan teks tetap di atas overlay */
+        .description-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        
+        .description-content {
+            position: relative;
+            z-index: 2;
+            overflow-y: auto;
+            max-height: 100%;
+            padding-right: 10px;
+        }
+        
+        figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        figure img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        
+        figcaption {
+            font-size: 14px;
+            color: #ddd;
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        Yustisio's Competitions Achievement
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <button class="menu-item" onclick="showDescription('ISEF')">Islamic Science and Technology Fair (ISEF) 2024</button>
+            <button class="menu-item" onclick="showDescription('GSC')">Geology Student Competition (GSC ITB) 2024</button>
+            <button class="menu-item" onclick="showDescription('PF')">Physics Fest 9.0 2023</button>
+            <button class="menu-item" onclick="showDescription('LOG')">Land of Geoscience (LOG) 2023</button>
+            <button class="menu-item" onclick="showDescription('Mulawarman')">Mulawarman Geophysics Workshop 2023</button>
+            <button class="menu-item" onclick="showDescription('KONI')">Physics Olympiads</button>
+            <button class="menu-item" onclick="showDescription('GWES')">Geophysics Whiz Event and Seminar (GWES) 2023</button>
+            <button class="menu-item" onclick="showDescription('SLIPA')">Slawi Performing Art (SLIPA)</button>
+            <button class="menu-item" onclick="showDescription('Culture')">Culture Camp Competition</button>
+            <button class="menu-item" onclick="showDescription('Fesmus')">Fesival Musik Pelajar 2018</button>
+            <button class="menu-item" onclick="showDescription('FLS2N')">Festival dan Lomba Seni Siswa Nasional (FLS2N) 2017</button>
+            <button class="menu-item" onclick="showDescription('Gelora')">Gelora PBB 2017</button>
+            <button class="menu-item" onclick="showDescription('Siaga 2015')">Pesta Siaga 2013</button>
+        </div>
+
+        <div class="description" id="description">
+            <div class="description-content">
+                <p>Click on a menu item to view the description here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const descriptions = {
+            'ISEF': {
+                text: [
+                    '<p>On November 9th 2024, we secured 3rd place in the Quranic Scientific Writing Competition organized by the Faculty of Science at UNAIR. We did it after going through various stages, from abstract submission to presentation, competing against participants from all over Indonesia. Our paper was titled "THE INTEGRATION OF EINSTEINS THEORY OF RELATIVITY AND MINKOWSKIS SPACE-TIME CONCEPT AS A RATIONALIZATION OF THE ISRA MIRAJ EVENT OF PROPHET MUHAMMAD SAW."</p>',
+                    '<p>The rapid advancements in science and technology, particularly in modern physics, have marked significant intellectual achievements for humanity. However, these developments have also deepened the divide between the domains of science and religion, often regarded as incompatible by secular perspectives. In certain cases, secular viewpoints have led to skepticism towards religion, arguing that religious aspects are frequently perceived as inconsistent or even contradictory to common sense. One example that often sparks debate is the Isra Miraj, the miraculous night journey of Prophet Muhammad SAW to the heavens, which, from a rational perspective, raises questions and doubts.</p>',
+                    '<p>Conventional accounts of the Isra Miraj often involve extraordinary, transcendental, and metaphysical elements, which, in turn, create rational skepticism. For this reason, our paper focuses on the theme "RATIONALIZING THE ISRA MIRAJ EVENT OF PROPHET MUHAMMAD SAW" as its central topic. This theme is deemed relevant within the framework of modern physics, simultaneously paving the way for an understanding and solutions that can bridge science and religion. Our study employed methods that included literature review and empirical analysis of the principles underlying Albert Einsteins theory of relativity and Minkowskis space-time concept. Through this work, we hope to uncover new insights into the Isra Miraj event, capable of maintaining scientific integrity while strengthening faith in religion. Thus, this paper aspires to reveal the greatness of the Almighty God, which is undeniably evident within the framework of scientific advancement. Additionally, it seeks to deepen the complex relationship between religion and science.</p>'
+                ],
+                images: [
+                    {src: 'compisef1.jpg', caption: 'Yustisio Dianwiyono; M. Alfa Nur Hani; M. Daffa Nauval'},
+                    {src: 'compisef2.jpg', caption: 'Al Isra ayat 1'},
+                    {src: 'compisef4.jpg', caption: 'studi literatur'},
+                    {src: 'compisef5.jpg', caption: 'Penghitungan empiris Isra'},
+                    {src: 'compisef6.jpg', caption: 'Konsep Miraj'}
+                ],
+                background: 'logokampus.jpg'
+            },
+            'GSC': {
+                text: [
+                    '<p>On August 12, 2024, we achieved 3rd place in the GeoDevelopment Competition at the Geology Student Competition ITB 2024. The competition began with the organizing committee providing a case study on disaster-prone areas in Wangunsari Village, West Bandung Regency. The competition process took approximately one month, from initial discussions to the final output and proposal submission.</p>',
+                    '<p>This proposal analyzes the evacuation routes for landslide disasters in Wangunsari Village, Sindangkerta District, West Bandung Regency, using the Geographic Information System (GIS) method. This area is highly susceptible to landslides due to unstable geological conditions, steep slopes, and high rainfall intensity. Therefore, this study aims to identify key parameters influencing landslide vulnerability, determine risk zones, and design effective and safe evacuation routes for the community.</p>',
+                    '<p>The research methodology applies GIS-based spatial analysis, considering factors such as lithology, hydraulic conductivity, slope steepness, and settlement density. The results include a landslide susceptibility map and an evacuation route plan that can serve as a disaster mitigation guide. It is expected that this study will enhance community preparedness in disaster response and serve as a reference for the government in spatial planning and landslide risk management in the region.</p>'
+                ],
+                images: [
+                    {src:'comgsc1.jpg',caption:'Yustisio Dianwiyono; Arifa Anashifa Faza; Agtian Gunawan Wibiwsono'},
+                    {src:'comgsc2.png',caption:'Peta Desa Wangunsari '},
+                    {src:'comgsc3.png',caption:'Peta Evakuasi'},
+                    {src:'comgsc4.png',caption:'Peta Kerawanan Longsor'}
+                ],
+                background: 'logokampus.jpg'
+            },
+            'PF': {
+                text: [
+                    '<p>On November 24th 2023, we achieved 2nd place in a physics debate competition. This Physics Debate was organized by Universitas Pendidikan Indonesia. The debate system used was the British Parliamentary Debate, in which four teams compete by defending their arguments. Each team consisted of two members. The themes discussed in this debate included the Utilization of Physics in the Industrial Era, Outer Space, Renewable Energy, Artificial Intelligence, and various other applications of physics. This competition greatly enriched our knowledge, not only about physics but also about effective communication and optimal time management.</p>'
+                ],
+                images: [
+                    {src:'comphy1.jpg',caption:'Yustisio Dianwiyono; M. Fadeli Saputra'},
+                    {src:'comphy2.jpg',caption:'Momen pidato'},
+                    {src:'comphy3.jpg',caption:'reward kejuaraan'}
+                ],
+                background: 'logokampus.jpg'
+            },
+            'LOG': {
+                text: [
+                    '<p>On November 25th 2023, we won the Geophysics Exploration Design competition organized by HMTGF and SEG UPN as part of the Land of Geoscience 2023 event. The competition we participated in involved designing an exploration plan based on a given case study. We utilized various media and references to develop this exploration design. Additionally, we consulted with Mr. Maman Rohaman in preparing the survey design.</p>',
+                    '<p>The government is optimistic about achieving the target of 1 million barrels of oil per day by 2030. This presents a challenge in discovering new resources, developing frontier areas, and maximizing production from existing oil and gas fields. Currently, Indonesias oil and gas production still heavily relies on conventional reserves. Meanwhile, the source rock in the North East Java Basin has been identified as an effective source rock, originating from Middle Eocene deposits, consisting of shale and carbonate rocks capable of generating unconventional oil and gas. One of Indonesias unconventional oil and gas potentials is located in the North East Java Basin, which is rich in organic material with kerogen type II-III and a total organic carbon (TOC) content ranging from 1% to 4%.</p>',
+                    '<p>The target of this study is the Ngimbang Formation at depths of 2,500 – 4,000 meters below the Earths surface, confirmed to meet the characteristics of shale gas. To ensure successful future exploration, an unconventional oil and gas survey is conducted by estimating the source rock zone using the 2D seismic reflection method. The oil and gas exploration project is named the SN-21 Project, with a total survey line length of 337.4 km, consisting of 10 lines divided into two domains: four west-east oriented lines and six north-south oriented lines. The 40 x 50 km exploration block is integrated with historical seismic survey lines, borehole distributions, surface geological data, and Topex gravity data to further identify the survey area. The initial survey includes geological and topographic mapping, ground gravity acquisition, and seismic refraction.</p>',
+                    '<p>The SN-21 exploration project requires collaboration from 170 personnel, each with their respective roles and expertise. The estimated duration for this project is approximately seven months, with a total cost, including a 10% VAT, of around IDR 14,637,058,700. The exploration results are expected to provide information on geological structures, the dimensions and physical parameters of the source rock, rock thickness and structure, and drilling point estimations, ultimately depicting the petroleum system based on geophysical analysis.</p>',
+                    '<p>Besides winning first place in survey design, I also won first place in a photo competition using Mount Merapi as the subject.</p>',
+                    '<p>[Sentuhan Pagi yang Menggenggam Merapi dalam Kelembutan Abadi]</p>',
+                    '<p>"Di Pagi yang segar, tepat di sebelah si kembar Merbabu, Merapi menjulang seperti penjaga megah alam, merentangkan dirinya dengan keanggunan di bawah sinar matahari yang baru terbit. Seperti layaknya raksasa tidur yang sedang terbangun, terhiasi kabut tipis seperti selimut yang lembut, memberikan sentuhan misteri pada panorama yang menakjubkan. Langit biru yang luntur perlahan menjadi nuansa jingga lembut, seakan  akan alam sedang mengecat langit dengan sentuhan hangat sebelum memulai hari dengan penuh semangat."</p>',
+                    '<p>"Pemandangan ini tidak hanya menghipnotis mata, namun juga merangkul jiwa dengan keindahan yang natural dan menenangkan. Bagai sebuah lukisan alam yang hidup, foto ini mengajak pendengarnya untuk merenung tentang kebesaran alam semesta dan keindahan yang tiada tara. Merapi tidak hanya menjadi bagian dari lanskap, tetapi juga menjembatani kesenjangan antara dunia manusia dan keajaiban alam yang lebih besar dari manusia itu sendiri."</p>'
+                ],
+                images: [
+                    {src: 'complog1.jpg', caption:'Yustisio Dianwiyono; Arifa Anashifa Faza; Agtian Gunawan'},
+                    {src: 'complog2.jpg', caption:'Peta overlay Gravitasi, Geologi Struktur, Sebaran Sumur, dan Sebaran Lintasan Seismik'},
+                    {src: 'complog3.jpg', caption:'Peta desain survei gravitasi'},
+                    {src: 'complog6.jpg', caption:'Peta desain survei seismik refleksi'},
+                    {src: 'complog10.png', caption: 'Pengumuman juara photocompetition'}
+                ],
+                background: 'logokampus.jpg',
+                link: 'https://www.instagram.com/p/Cz3sZ8KhNbS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+            },
+            'Mulawarman': {
+                text: [
+                    '<p>On October 21st 2023, we won First Place in this competition in a competition organized by Mulawarman University as part of the Geophysics Workshop with the theme "THE ROLE OF GEOPHYSICS IN SUPPORTING NET ZERO EMISSIONS 2045." The competition involved interpreting geoelectrical data provided by the organizers. Participants in the competition came from various universities across Indonesia.</p>'
+                ],
+                images: [
+                    {src:'comul1.jpg',caption:'Yustisio Dianwiyono; Sekar Indraswari; Bagus Wibisono'},
+                    {src:'comul2.jpg',caption:'contoh hasil inversi model geolistrik'}
+                ],
+                background: 'logokampus.jpg'
+            },
+            'KONI': {
+                text: [
+                    '<p>On September 10th and September 30th 2023, I participated in science competitions, commonly known as olympiads. I am deeply interested in physics olympiads; however, I cannot frequently travel long distances due to my practical lab obligations and academic activities at university. Therefore, I opted to participate in olympiads through online platforms and specialized websites. I successfully won a gold medal in the National Student Science Competition organized by Puskanas ID and secured 1st place in the KONI National Science Competition, both in the physics category at the university level. The physics material presented ranged from classical physics to modern physics, as well as theoretical, practical, and empirical physics</p>'
+                ],
+                images: [
+                    {src:'comosn3.jpg',caption:'Pengumuman nilai dan kejuaraan KS2N presmanesia'},
+                    {src:'comosn4.jpg',caption:'Pengumuman nilai dan kejuaraan KONI National Science Competition'},
+                    {src:'comosn5.jpg',caption:'contoh soal perlombaan'}
+                ],
+                background: 'logokampus.jpg'
+            },
+            'GWES': {
+                text: [
+                    '<p>On August 2nd 2023, We created a geophysical survey design to participate in the 9th GWES (Geophysics Whiz Event and Seminar) competition. We used a geothermal case study in Banda Neira. The appearance of hot springs, fumaroles, and metamorphic rocks indicates the potential presence of a geothermal system in the Banda sub-district area. Furthermore, the results of geological and geochemical investigations conducted in the Banda sub-district strengthen the assumption that the area has prospects for development as a power plant. The development of geothermal potential in the Banda sub-district is carried out through gravity exploration, magnetotellurics, and microearthquake surveys, aimed at determining the reservoir geometry and the subsurface conditions of the geothermal system, integrated with geological, geochemical, Land Surface Temperature (LST), and Normalized Difference Vegetation Index (NDVI) data to further identify geothermal potential.</p>',
+                    '<p>The exploration area covers a plot of 5.3 x 4.5 km, divided into two exploration areas: Naira Island, which is influenced by the Lonthor caldera wall running in a North-South direction, and Mount Banda Api, which is influenced by the pattern of normal fault lineaments. This lineament pattern is associated with the geological structure as a play zone for the geothermal reservoir, leading to the manifestation of fumaroles and hot springs.The design we created also considers the workforce organization as well as the entire budget plan down to the details, including honorarium and materials. The survey design we submitted secured first place in the Survey Design Competition.</p>'
+                ],
+                images: [
+                    {src:'comgwes1.jpg',caption:'Yustisio Dianwiyono; Firdos Bahar Sidik'},
+                    {src:'compgwes2.jpg',caption:'Peta geologi'},
+                    {src:'compgwes3.jpg',caption:'Peta kemiringan lereng'},
+                    {src:'compgwes4.jpg',caption:'Peta Land Surface Temperature'},
+                    {src:'compgwes5.jpg',caption:'Peta NDVI'}
+                ],
+                background: 'logokampus.jpg'
+            },
+            'SLIPA': {
+            text: [
+                '<p>We won 3rd place in the Slawi Performing Art (SLIPA) 2019 competition for the Student Band Music category at the Tegal Regency level. The competition was held in December 2019, featuring participants from junior and senior high schools across Tegal Regency. I played the saxophone, and we performed Pejantan Tangguh and Sahabat Sejati by Sheila On 7.</p>',
+                '<p>Additionally, we also secured 5th place in SLIPA 2018, which also featured a student band competition at the regency level. This competition took place in November 2018, with several high school participants from across Tegal Regency. I played the saxophone and performed Sugar by Maroon 5 and Can’t Take My Eyes Off You.</p>'
+            ],
+            images: [
+                {src:'comslipa191.jpg',caption:'Penampilan Band SLIPA 2019'},
+                {src:'comslipa192.jpg',caption:'penampilan Saxophone'},
+                {src:'compslipa181.jpg',caption:'Foto Personel SLIPA 2018'},
+                {src:'comslipa182.jpg',caption:'penampilan Saxophone'}
+            ],
+            background: 'logosma.jpg'
+            },
+            'Culture': {
+            text: [
+                '<p>We won 3rd place in the Cultural Camp event organized by the Department of Education and Culture of Tegal Regency in 2019. The camp lasted for three consecutive days at a designated camping ground. The activities during the cultural camp were diverse, ranging from seminars, batik-making lessons, and nature studies to competitive artistic performances. We also undertook long treks to complete various challenges at each checkpoint until reaching the finish line.</p>',
+                '<p>Additionally, we also achieved 2nd place in the 2018 Cultural Camp. The activities were mostly similar to those in 2019 but were slightly simpler. It was our first experience participating in a culture-themed camping event.</p>'
+            ],
+            images: [
+                {src:'comkembud19.jpg',caption:'Personel Kemah Budaya 2019 bersama Pak Wisnu'},
+                {src:'comkembud192.jpg',caption:'Persiapan penampilan tari tradisional'},
+                {src:'comkembud18.jpg',caption:'Personel Kemah Budaya 2018'},
+                {src:'comkembud182.jpg',caption:'Piala Kejuaraan Kemah Budaya 2018'}
+            ],
+            background: 'logosma.jpg'
+            },
+
+            'Fesmus': {
+            text: [
+                '<p>We won the Student Band Competition organized by the Research and Development Department of Tegal Regency in 2018. I played the saxophone in this competition.</p>'
+            ],
+            images: [
+                {src:'comband18.jpg',caption:'Penampilan Yowes Band Smansaba 2018'}
+            ],
+            background: 'logosma.jpg'
+
+            },
+            'FLS2N': {
+            text: [
+                '<p>In 2017, we won 3rd place in the National Student Art Festival and Competition (FLS2N) in the traditional music category. We performed a simple musical arrangement of a Tegalese song titled Gotring. I took on two roles in the performance, playing both the saron (part of gamelan) and the suling (bamboo flute).</p>'
+            ],
+            images: [
+                {src:'comfls2n.png',caption:'penampilan musik tradisional Lagu Tegalan Gotring'}
+            ],
+            background: 'logosmp.jpg'
+            },
+            'Gelora': {
+            text: [
+                '<p>This was my first drill (PBB - Peraturan Baris-Berbaris) competition, called Lomba Gelora. The competition was organized by a high school in Brebes and featured several categories, including drill performance (PBB), flag-raising formations, and costume evaluation. We placed 5th overall, based on the accumulation of scores from both the PBB and flag-raising formation categories.</p>',
+            ],
+            images: [
+                {src:'comgelora.jpg',caption:'Foto Personel Lomba Gelora 2017'}
+            ],
+            background: 'logosmp.jpg'
+            },
+
+            'Siaga 2015': {
+            text: [
+                '<p>This was my first competition, and we won first place in the 2013 Pesta Siaga Scout Competition at the Balapulang District level. The competition featured various adventure challenges, such as walking sticks, puppet puzzles, Javanese script, and other scouting activities. It was participated in by dozens of elementary schools across Balapulang District. After this competition, we advanced to the regency level, but unfortunately, we were not able to secure a victory.</p>'
+            ],
+            images: [
+                {src:'comsiaga.jpg',caption:'Salah satu petualangan lomba yaitu menyusun puzzle wayang'}
+            ],
+            background: 'logosd.jpg',
+            link: 'https://kwarcabtegalkab.blogspot.com/2013/02/pesta-siaga-kwarran-balapulang-digelar.html'
+            },
+        };
+        function showDescription(org) {
+        const data = descriptions[org];
+        if (!data) return;
+
+        const descriptionElement = document.getElementById('description');
+        descriptionElement.style.backgroundImage = `url(${data.background})`;
+
+        let contentHTML = '<div class="description-content">';
+
+        // Menampilkan semua teks terlebih dahulu
+        if (data.text && data.text.length > 0) {
+            data.text.forEach((paragraph) => {
+                contentHTML += paragraph;
+            });
+        } else {
+            contentHTML += '<p>No description available.</p>';
+        }
+
+        // Menampilkan semua gambar setelah teks
+        if (data.images && data.images.length > 0) {
+            data.images.forEach((image) => {
+                contentHTML += `
+                    <figure>
+                        <img src="${image.src}" alt="${image.caption}">
+                        <figcaption>${image.caption}</figcaption>
+                    </figure>
+                `;
+            });
+        }
+
+        // Menambahkan tombol "Go to Link" jika ada link
+        if (data.link) {
+            contentHTML += `
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="${data.link}" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #F77F00; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                        Go to Link
+                    </a>
+                </div>
+            `;
+        }
+
+        contentHTML += '</div>';
+        descriptionElement.innerHTML = contentHTML;
+    }
+
+
+    </script>
+</body>
+</html>
